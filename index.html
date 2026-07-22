@@ -4,14 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sospeter Kinyanjui — Backend Systems Engineer</title>
-<meta name="description" content="Sospeter Kinyanjui is a Backend Systems Engineer and DevOps Engineer building services in Go and Rust, based in Kisumu, Kenya.">
+<meta name="description" content="Sospeter Kinyanjui is a Backend Systems Engineer building services in Go and Rust, with infrastructure and CI/CD ownership. Based in Kisumu, Kenya.">
+<link rel="icon" type="image/png" href="IMG_20260625_124648_006.jpg">
 <style>
   :root {
-    --bg: #ffffff;
-    --ink: #1a1a1a;
-    --muted: #6b6b6b;
-    --rule: #e4e4e4;
-    --accent: #22406b;
+    --bg: #0a0a0a;
+    --ink: #ededed;
+    --muted: #8a8a8a;
+    --rule: #262626;
+    --accent: #b3261e;
   }
 
   * { box-sizing: border-box; }
@@ -41,6 +42,7 @@
     object-fit: cover;
     display: block;
     margin-bottom: 28px;
+    border: 1px solid var(--rule);
   }
 
   h1 {
@@ -76,6 +78,30 @@
 
   @media (prefers-reduced-motion: reduce) {
     .intro .word {
+      animation: none;
+      opacity: 1;
+      filter: none;
+      transform: none;
+    }
+  }
+
+  .reveal-section {
+    opacity: 0;
+    filter: blur(3px);
+    transform: translateY(10px);
+    animation: revealSection 0.6s ease forwards;
+  }
+
+  @keyframes revealSection {
+    to {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-section {
       animation: none;
       opacity: 1;
       filter: none;
@@ -129,7 +155,7 @@
   li:last-child { margin-bottom: 0; }
 
   .proj-name {
-    color: var(--ink);
+    color: var(--accent);
     font-weight: 600;
   }
 
@@ -149,7 +175,7 @@
   .comp-label {
     flex: 0 0 132px;
     font-weight: 600;
-    color: var(--ink);
+    color: var(--accent);
     font-size: 15px;
   }
 
@@ -167,16 +193,6 @@
     color: var(--muted);
   }
 
-  footer {
-    margin-top: 72px;
-    padding-top: 24px;
-    border-top: 1px solid var(--rule);
-    font-size: 13px;
-    color: var(--muted);
-  }
-
-  footer p { margin: 0; }
-
   @media (max-width: 480px) {
     main { padding: 64px 20px 60px; }
     h1 { font-size: 23px; }
@@ -188,13 +204,13 @@
 <body>
 <main>
 
-  <img class="avatar" src="img/portrait.jpg" alt="Sospeter Kinyanjui" width="84" height="84">
+  <img class="avatar" src="IMG_20260625_124648_006.jpg" alt="Sospeter Kinyanjui" width="84" height="84">
 
   <h1>Sospeter Kinyanjui</h1>
 
   <p class="intro" id="intro"></p>
 
-  <section>
+  <section class="reveal-section">
     <h2>Projects</h2>
     <ul>
       <li>
@@ -220,7 +236,7 @@
     </ul>
   </section>
 
-  <section>
+  <section class="reveal-section">
     <h2>Core Competencies</h2>
     <ul>
       <li class="comp-row">
@@ -242,27 +258,62 @@
     </ul>
   </section>
 
-  <section>
-    <h2>Social &amp; Contact</h2>
-    <ul class="social">
-      <li><span>GitHub</span> — <a href="https://github.com/sospeter-57" target="_blank" rel="noopener">sospeter-57</a></li>
-      <li><span>Email</span> — <a href="mailto:sospeterkinyanjui57@gmail.com">sospeterkinyanjui57@gmail.com</a></li>
+  <section class="reveal-section">
+    <h2>Writing</h2>
+    <ul>
+      <li>
+        <a href="https://dev.to/sospeter/how-apache-iggy-ditched-tokio-for-thread-per-core-iouring-and-what-it-cost-them-3m75" target="_blank" rel="noopener">
+          <span class="proj-name">How Apache Iggy Ditched Tokio for Thread-Per-Core io_uring — And What It Cost Them</span></a>
+      </li>
+      <li>
+        <a href="https://dev.to/sospeter/leveraging-iouring-for-performant-asynchronous-linux-applications-4pl7" target="_blank" rel="noopener">
+          <span class="proj-name">Leveraging io_uring for Performant Asynchronous Linux Applications</span></a>
+      </li>
+      <li>
+        <a href="https://dev.to/sospeter/how-bittorrent-actually-works-h8a" target="_blank" rel="noopener">
+          <span class="proj-name">How BitTorrent Actually Works</span></a>
+      </li>
+      <li>
+        <a href="https://dev.to/sospeter/understanding-tcp-the-backbone-of-reliable-network-communication-5684" target="_blank" rel="noopener">
+          <span class="proj-name">Understanding TCP: The Backbone of Reliable Network Communication</span></a>
+      </li>
+      <li>
+        <a href="https://dev.to/sospeter/http-the-webs-protocol-1b69" target="_blank" rel="noopener">
+          <span class="proj-name">HTTP: The Web's Protocol</span></a>
+      </li>
+      <li>
+        <a href="https://dev.to/sospeter/utilizing-oceans-to-power-data-centers-4b18" target="_blank" rel="noopener">
+          <span class="proj-name">Utilizing Oceans to Power Data Centers</span></a>
+      </li>
     </ul>
   </section>
 
-  <footer>
-    <p>This page consists of two resources: the HTML and the portrait photo. The intro text reveal uses CSS keyframes, no JS libraries.</p>
-  </footer>
+  <section class="reveal-section">
+    <h2>Social &amp; Contact</h2>
+    <ul class="social">
+      <li><span>GitHub</span> — <a href="https://github.com/sospeter-57" target="_blank" rel="noopener">sospeter-57</a></li>
+      <li><span>X</span> — <a href="https://x.com/KinyanjuiM99140" target="_blank" rel="noopener">@KinyanjuiM99140</a></li>
+      <li><span>LinkedIn</span> — <a href="https://linkedin.com/in/sospeter" target="_blank" rel="noopener">sospeter</a></li>
+      <li><span>Email</span> — <a href="mailto:sospeterkinyanjui57@gmail.com">sospeterkinyanjui57@gmail.com</a></li>
+    </ul>
+  </section>
 
 </main>
 
 <script>
   // Split the intro into words, each wrapped in a span with a staggered
   // animation-delay so the reveal effect works purely off CSS keyframes.
-  const introText = "Hi, I'm Sospeter. I'm a backend systems engineer and DevOps engineer building services in Go and Rust, with project experience spanning a rental marketplace, a desktop 2FA tool, and a web forum backend. I'm based in Kisumu, Kenya, currently studying Software Engineering at Zone01 Kisumu.";
+  const introText = "Hi, I'm Sospeter. I'm a backend systems engineer building services in Go and Rust, with infrastructure and CI/CD ownership, and project experience spanning a rental marketplace, a desktop 2FA tool, and a web forum backend. I'm based in Kisumu, Kenya, currently studying Software Engineering at Zone01 Kisumu.";
   const el = document.getElementById('intro');
   const words = introText.split(' ');
   el.innerHTML = words.map((w, i) => `<span class="word" style="--i:${i}">${w}</span>`).join(' ');
+
+  // Sections pick up the cascade right after the intro finishes typing in,
+  // each one blurring/fading up in turn.
+  const introDuration = words.length * 28 + 500;
+  document.querySelectorAll('.reveal-section').forEach((sectionEl, i) => {
+    sectionEl.style.animationDelay = `${introDuration + i * 160}ms`;
+  });
 </script>
 
 </body>
