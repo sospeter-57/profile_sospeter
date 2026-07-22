@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sospeter Kinyanjui — Backend Systems Engineer</title>
+<meta name="description" content="Sospeter Kinyanjui is a Backend Systems Engineer and DevOps Engineer building services in Go and Rust, based in Kisumu, Kenya.">
+<style>
+  :root {
+    --bg: #ffffff;
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --rule: #e4e4e4;
+    --accent: #22406b;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  main {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 96px 24px 80px;
+  }
+
+  .avatar {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 28px;
+  }
+
+  h1 {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 18px;
+    letter-spacing: -0.01em;
+  }
+
+  .intro {
+    font-size: 17px;
+    color: var(--ink);
+    margin: 0 0 8px;
+    max-width: 56ch;
+  }
+
+  .intro .word {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(6px);
+    animation: reveal 0.5s ease forwards;
+    animation-delay: calc(var(--i) * 28ms);
+  }
+
+  @keyframes reveal {
+    to {
+      opacity: 1;
+      filter: blur(0);
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .intro .word {
+      animation: none;
+      opacity: 1;
+      filter: none;
+      transform: none;
+    }
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+
+  a:hover, a:focus-visible {
+    border-bottom-color: var(--accent);
+  }
+
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  section {
+    margin-top: 52px;
+  }
+
+  h2 {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin: 0 0 14px;
+    padding-left: 0;
+  }
+
+  li:last-child { margin-bottom: 0; }
+
+  .proj-name {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .proj-desc {
+    color: var(--muted);
+  }
+
+  .comp-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+    align-items: baseline;
+  }
+
+  .comp-row:last-child { margin-bottom: 0; }
+
+  .comp-label {
+    flex: 0 0 132px;
+    font-weight: 600;
+    color: var(--ink);
+    font-size: 15px;
+  }
+
+  .comp-value {
+    color: var(--muted);
+  }
+
+  .social li {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .social .handle {
+    color: var(--muted);
+  }
+
+  footer {
+    margin-top: 72px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  footer p { margin: 0; }
+
+  @media (max-width: 480px) {
+    main { padding: 64px 20px 60px; }
+    h1 { font-size: 23px; }
+    .comp-row { flex-direction: column; gap: 2px; }
+    .comp-label { flex: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <img class="avatar" src="img/portrait.jpg" alt="Sospeter Kinyanjui" width="84" height="84">
+
+  <h1>Sospeter Kinyanjui</h1>
+
+  <p class="intro" id="intro"></p>
+
+  <section>
+    <h2>Projects</h2>
+    <ul>
+      <li>
+        <a href="https://github.com/sospeter-57/NyumbaDirect" target="_blank" rel="noopener">
+          <span class="proj-name">NyumbaDirect</span></a> —
+        <span class="proj-desc">dual-sided Kenyan rental marketplace connecting tenants directly with landlords, with M-Pesa payments and Leaflet map search.</span>
+      </li>
+      <li>
+        <a href="https://github.com/sospeter-57/kyla-2FA" target="_blank" rel="noopener">
+          <span class="proj-name">Kyla-2FA</span></a> —
+        <span class="proj-desc">desktop two-factor authenticator built in Go with the Fyne GUI toolkit, offline TOTP generation.</span>
+      </li>
+      <li>
+        <a href="https://github.com/sospeter-57/forum" target="_blank" rel="noopener">
+          <span class="proj-name">forum</span></a> —
+        <span class="proj-desc">Go REST API with auth/CORS middleware, category-based content, and like/dislike interactions.</span>
+      </li>
+      <li>
+        <a href="https://github.com/emrent-rs/emrent" target="_blank" rel="noopener">
+          <span class="proj-name">emrent</span></a> —
+        <span class="proj-desc">BitTorrent client as a Rust Cargo workspace — bencode, DHT peer discovery, metainfo parsing, piece verification.</span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Core Competencies</h2>
+    <ul>
+      <li class="comp-row">
+        <span class="comp-label">Languages</span>
+        <span class="comp-value">Go, Rust, TypeScript, Python</span>
+      </li>
+      <li class="comp-row">
+        <span class="comp-label">Frameworks</span>
+        <span class="comp-value">Express, Flask, React, Django</span>
+      </li>
+      <li class="comp-row">
+        <span class="comp-label">Systems &amp; APIs</span>
+        <span class="comp-value">REST, GraphQL, gRPC, decentralized systems</span>
+      </li>
+      <li class="comp-row">
+        <span class="comp-label">Cloud &amp; DevOps</span>
+        <span class="comp-value">Docker, CI/CD, Terraform, Linux</span>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Social &amp; Contact</h2>
+    <ul class="social">
+      <li><span>GitHub</span> — <a href="https://github.com/sospeter-57" target="_blank" rel="noopener">sospeter-57</a></li>
+      <li><span>Email</span> — <a href="mailto:sospeterkinyanjui57@gmail.com">sospeterkinyanjui57@gmail.com</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>This page consists of two resources: the HTML and the portrait photo. The intro text reveal uses CSS keyframes, no JS libraries.</p>
+  </footer>
+
+</main>
+
+<script>
+  // Split the intro into words, each wrapped in a span with a staggered
+  // animation-delay so the reveal effect works purely off CSS keyframes.
+  const introText = "Hi, I'm Sospeter. I'm a backend systems engineer and DevOps engineer building services in Go and Rust, with project experience spanning a rental marketplace, a desktop 2FA tool, and a web forum backend. I'm based in Kisumu, Kenya, currently studying Software Engineering at Zone01 Kisumu.";
+  const el = document.getElementById('intro');
+  const words = introText.split(' ');
+  el.innerHTML = words.map((w, i) => `<span class="word" style="--i:${i}">${w}</span>`).join(' ');
+</script>
+
+</body>
+</html>
+
