@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sospeter Kinyanjui — Backend Systems Engineer</title>
-<meta name="description" content="Sospeter Kinyanjui is a Backend Systems Engineer building services in Go and Rust, with infrastructure and CI/CD ownership. Based in Kisumu, Kenya.">
-<link rel="icon" type="image/png" href="IMG_20260625_124648_006.jpg">
+<meta name="description" content="Sospeter Kinyanjui is a Software Engineer building mainly in Go, Rust and Python, with infrastructure and CI/CD ownership. Based in Kisumu, Kenya.">
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -93,6 +93,7 @@
     filter: blur(3px);
     transform: translateY(10px);
     animation: revealSection 0.6s ease forwards;
+    animation-delay: 1.8s;
   }
 
   @keyframes revealSection {
@@ -130,18 +131,6 @@
 
   section {
     margin-top: 52px;
-  }
-
-  h2 {
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin: 0 0 18px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--rule);
   }
 
   ul {
@@ -192,8 +181,75 @@
     margin-bottom: 10px;
   }
 
-  .social .handle {
+  /* Tabs — CSS only, driven by visually hidden radio inputs. */
+  .tab-radio {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .tab {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
     color: var(--muted);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 7px 14px;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  }
+
+  .tab:hover {
+    color: var(--ink);
+    border-color: var(--muted);
+  }
+
+  #tab-projects:checked ~ .tabs label[for="tab-projects"],
+  #tab-writing:checked ~ .tabs label[for="tab-writing"],
+  #tab-competencies:checked ~ .tabs label[for="tab-competencies"],
+  #tab-social:checked ~ .tabs label[for="tab-social"] {
+    color: var(--ink);
+    border-color: var(--accent);
+    background: rgba(179, 38, 30, 0.14);
+  }
+
+  #tab-projects:focus-visible ~ .tabs label[for="tab-projects"],
+  #tab-writing:focus-visible ~ .tabs label[for="tab-writing"],
+  #tab-competencies:focus-visible ~ .tabs label[for="tab-competencies"],
+  #tab-social:focus-visible ~ .tabs label[for="tab-social"] {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .tab-panel {
+    display: none;
+    animation: panelIn 0.35s ease both;
+  }
+
+  #tab-projects:checked ~ #panel-projects,
+  #tab-writing:checked ~ #panel-writing,
+  #tab-competencies:checked ~ #panel-competencies,
+  #tab-social:checked ~ #panel-social {
+    display: block;
+  }
+
+  @keyframes panelIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tab-panel { animation: none; }
   }
 
   @media (max-width: 480px) {
@@ -207,140 +263,165 @@
 <body>
 <main>
 
-  <img class="avatar" src="IMG_20260625_124648_006.jpg" alt="Sospeter Kinyanjui" width="84" height="84">
+  <img class="avatar" src="avatar.jpg" alt="Sospeter Kinyanjui" width="168" height="168">
 
   <h1>Sospeter Kinyanjui</h1>
 
-  <p class="intro" id="intro"></p>
+  <p class="intro">
+    <span class="word" style="--i:0">Hi,</span>
+    <span class="word" style="--i:1">I'm</span>
+    <span class="word" style="--i:2">Sospeter.</span>
+    <span class="word" style="--i:3">I'm</span>
+    <span class="word" style="--i:4">a</span>
+    <span class="word" style="--i:5">Software</span>
+    <span class="word" style="--i:6">Engineer</span>
+    <span class="word" style="--i:7">mainly</span>
+    <span class="word" style="--i:8">building</span>
+    <span class="word" style="--i:9">with</span>
+    <span class="word" style="--i:10">Go,</span>
+    <span class="word" style="--i:11">Rust</span>
+    <span class="word" style="--i:12">and</span>
+    <span class="word" style="--i:13">Python.</span>
+    <span class="word" style="--i:14">I'm</span>
+    <span class="word" style="--i:15">based</span>
+    <span class="word" style="--i:16">in</span>
+    <span class="word" style="--i:17">Kenya,</span>
+    <span class="word" style="--i:18">currently</span>
+    <span class="word" style="--i:19">working</span>
+    <span class="word" style="--i:20">and</span>
+    <span class="word" style="--i:21">studying</span>
+    <span class="word" style="--i:22">Software</span>
+    <span class="word" style="--i:23">Engineering</span>
+    <span class="word" style="--i:24">at</span>
+    <span class="word" style="--i:25">Zone01</span>
+    <span class="word" style="--i:26">Kisumu.</span>
+  </p>
 
-  <section class="reveal-section">
-    <h2>Projects</h2>
-    <ul>
-      <li>
-        <a href="https://matchpoint-frontend-sand.vercel.app/" target="_blank" rel="noopener">
-          <span class="proj-name">Skill-match</span></a> —
-        <span class="proj-desc">AI-powered job-search assistant with persistent agentic memory, built on PostgreSQL (pgvector) and Google Gemini.</span>
-      </li>
-      <li>
-        <a href="https://github.com/sospeter-57/SipiRider" target="_blank" rel="noopener">
-          <span class="proj-name">SipiRider</span></a> —
-        <span class="proj-desc">cross-platform mobile app built with SvelteKit and Capacitor.</span>
-      </li>
-      <li>
-        <a href="https://github.com/sospeter-57/NyumbaDirect" target="_blank" rel="noopener">
-          <span class="proj-name">NyumbaDirect</span></a> —
-        <span class="proj-desc">dual-sided Kenyan rental marketplace connecting tenants directly with landlords, with M-Pesa payments and Leaflet map search.</span>
-      </li>
-      <li>
-        <a href="https://github.com/sospeter-57/kyla-2FA" target="_blank" rel="noopener">
-          <span class="proj-name">Kyla-2FA</span></a> —
-        <span class="proj-desc">desktop two-factor authenticator built in Go with the Fyne GUI toolkit, offline TOTP generation.</span>
-      </li>
-      <li>
-        <a href="https://github.com/sospeter-57/forum" target="_blank" rel="noopener">
-          <span class="proj-name">forum</span></a> —
-        <span class="proj-desc">Go REST API with auth/CORS middleware, category-based content, and like/dislike interactions.</span>
-      </li>
-      <li>
-        <a href="https://github.com/emrent-rs/emrent" target="_blank" rel="noopener">
-          <span class="proj-name">emrent</span></a> —
-        <span class="proj-desc">BitTorrent client as a Rust Cargo workspace — bencode, DHT peer discovery, metainfo parsing, piece verification.</span>
-      </li>
-    </ul>
-  </section>
+  <section class="reveal-section" aria-label="Portfolio">
+    <input type="radio" name="tabs" id="tab-projects" class="tab-radio" checked>
+    <input type="radio" name="tabs" id="tab-writing" class="tab-radio">
+    <input type="radio" name="tabs" id="tab-competencies" class="tab-radio">
+    <input type="radio" name="tabs" id="tab-social" class="tab-radio">
 
-  <section class="reveal-section">
-    <h2>Core Competencies</h2>
-    <ul>
-      <li class="comp-row">
-        <span class="comp-label">Languages</span>
-        <span class="comp-value">Go, Rust, TypeScript, Python</span>
-      </li>
-      <li class="comp-row">
-        <span class="comp-label">Frameworks</span>
-        <span class="comp-value">Express, Flask, React, Django</span>
-      </li>
-      <li class="comp-row">
-        <span class="comp-label">Systems &amp; APIs</span>
-        <span class="comp-value">REST, GraphQL, gRPC, decentralized systems</span>
-      </li>
-      <li class="comp-row">
-        <span class="comp-label">Cloud &amp; DevOps</span>
-        <span class="comp-value">Docker, CI/CD, Terraform, Linux</span>
-      </li>
-    </ul>
-  </section>
+    <div class="tabs">
+      <label class="tab" for="tab-projects">Projects</label>
+      <label class="tab" for="tab-writing">Writing</label>
+      <label class="tab" for="tab-competencies">Core Competencies</label>
+      <label class="tab" for="tab-social">Social &amp; Contact</label>
+    </div>
 
-  <section class="reveal-section">
-    <h2>Writing</h2>
-    <ul>
-      <li>
-        <a href="https://dev.to/sospeter/what-apache-iggys-graduation-taught-me-about-open-source-5416" target="_blank" rel="noopener">
-          <span class="proj-name">What Apache Iggy's Graduation Taught Me About Open Source</span></a>
-      </li>
-      <li>
-        <a href="https://dev.to/sospeter/how-traceroute-actually-works-4od7" target="_blank" rel="noopener">
-          <span class="proj-name">How Traceroute Actually Works</span></a>
-      </li>
-      <li>
-        <a href="https://dev.to/sospeter/how-invisible-captchas-work-4f2c" target="_blank" rel="noopener">
-          <span class="proj-name">How Invisible CAPTCHAs Work</span></a>
-      </li>
-      <li>
-        <a href="https://dev.to/sospeter/how-apache-iggy-ditched-tokio-for-thread-per-core-iouring-and-what-it-cost-them-3m75" target="_blank" rel="noopener">
-          <span class="proj-name">How Apache Iggy Ditched Tokio for Thread-Per-Core io_uring — And What It Cost Them</span></a>
-      </li>
-      <li>
-        <a href="https://dev.to/sospeter/leveraging-iouring-for-performant-asynchronous-linux-applications-4pl7" target="_blank" rel="noopener">
-          <span class="proj-name">Leveraging io_uring for Performant Asynchronous Linux Applications</span></a>
-      </li>
-      <li>
-        <a href="https://dev.to/sospeter/how-bittorrent-actually-works-h8a" target="_blank" rel="noopener">
-          <span class="proj-name">How BitTorrent Actually Works</span></a>
-      </li>
-      <li>
-        <a href="https://dev.to/sospeter/understanding-tcp-the-backbone-of-reliable-network-communication-5684" target="_blank" rel="noopener">
-          <span class="proj-name">Understanding TCP: The Backbone of Reliable Network Communication</span></a>
-      </li>
-      <li>
-        <a href="https://dev.to/sospeter/http-the-webs-protocol-1b69" target="_blank" rel="noopener">
-          <span class="proj-name">HTTP: The Web's Protocol</span></a>
-      </li>
-      <li>
-        <a href="https://dev.to/sospeter/utilizing-oceans-to-power-data-centers-4b18" target="_blank" rel="noopener">
-          <span class="proj-name">Utilizing Oceans to Power Data Centers</span></a>
-      </li>
-    </ul>
-  </section>
+    <div class="tab-panel" id="panel-projects">
+      <ul>
+        <li>
+          <a href="https://matchpoint-frontend-sand.vercel.app/" target="_blank" rel="noopener">
+            <span class="proj-name">Skill-match</span></a> —
+          <span class="proj-desc">AI-powered job-search assistant with persistent agentic memory, built on PostgreSQL (pgvector) and Google Gemini.</span>
+        </li>
+        <li>
+          <a href="https://github.com/sospeter-57/SipiRider" target="_blank" rel="noopener">
+            <span class="proj-name">SipiRider</span></a> —
+          <span class="proj-desc">cross-platform mobile app built with SvelteKit and Capacitor.</span>
+        </li>
+        <li>
+          <a href="https://github.com/sospeter-57/NyumbaDirect" target="_blank" rel="noopener">
+            <span class="proj-name">NyumbaDirect</span></a> —
+          <span class="proj-desc">dual-sided Kenyan rental marketplace connecting tenants directly with landlords, with M-Pesa payments and Leaflet map search.</span>
+        </li>
+        <li>
+          <a href="https://github.com/sospeter-57/kyla-2FA" target="_blank" rel="noopener">
+            <span class="proj-name">Kyla-2FA</span></a> —
+          <span class="proj-desc">desktop two-factor authenticator built in Go with the Fyne GUI toolkit, offline TOTP generation.</span>
+        </li>
+        <li>
+          <a href="https://github.com/sospeter-57/forum" target="_blank" rel="noopener">
+            <span class="proj-name">forum</span></a> —
+          <span class="proj-desc">Go REST API with auth/CORS middleware, category-based content, and like/dislike interactions.</span>
+        </li>
+        <li>
+          <a href="https://github.com/emrent-rs/emrent" target="_blank" rel="noopener">
+            <span class="proj-name">emrent</span></a> —
+          <span class="proj-desc">BitTorrent client as a Rust Cargo workspace — bencode, DHT peer discovery, metainfo parsing, piece verification.</span>
+        </li>
+      </ul>
+    </div>
 
-  <section class="reveal-section">
-    <h2>Social &amp; Contact</h2>
-    <ul class="social">
-      <li><span>Resume</span> — <a href="https://github.com/sospeter-57/profile_sospeter/blob/master/Sospeter_Kinyanjui_cv.pdf" target="_blank" rel="noopener">Sospeter_Kinyanjui_cv.pdf</a></li>
-      <li><span>GitHub</span> — <a href="https://github.com/sospeter-57" target="_blank" rel="noopener">sospeter-57</a></li>
-      <li><span>X</span> — <a href="https://x.com/KinyanjuiM99140" target="_blank" rel="noopener">@KinyanjuiM99140</a></li>
-      <li><span>LinkedIn</span> — <a href="https://linkedin.com/in/sospeter" target="_blank" rel="noopener">sospeter</a></li>
-      <li><span>Email</span> — <a href="mailto:sospeterkinyanjui57@gmail.com">sospeterkinyanjui57@gmail.com</a></li>
-    </ul>
+    <div class="tab-panel" id="panel-writing">
+      <ul>
+        <li>
+          <a href="https://dev.to/sospeter/software-abstractions-86o" target="_blank" rel="noopener">
+            <span class="proj-name">Software Abstractions</span></a>
+        </li>
+        <li>
+          <a href="https://dev.to/sospeter/what-apache-iggys-graduation-taught-me-about-open-source-5416" target="_blank" rel="noopener">
+            <span class="proj-name">What Apache Iggy's Graduation Taught Me About Open Source</span></a>
+        </li>
+        <li>
+          <a href="https://dev.to/sospeter/how-traceroute-actually-works-4od7" target="_blank" rel="noopener">
+            <span class="proj-name">How Traceroute Actually Works</span></a>
+        </li>
+        <li>
+          <a href="https://dev.to/sospeter/how-invisible-captchas-work-4f2c" target="_blank" rel="noopener">
+            <span class="proj-name">How Invisible CAPTCHAs Work</span></a>
+        </li>
+        <li>
+          <a href="https://dev.to/sospeter/how-apache-iggy-ditched-tokio-for-thread-per-core-iouring-and-what-it-cost-them-3m75" target="_blank" rel="noopener">
+            <span class="proj-name">How Apache Iggy Ditched Tokio for Thread-Per-Core io_uring — And What It Cost Them</span></a>
+        </li>
+        <li>
+          <a href="https://dev.to/sospeter/leveraging-iouring-for-performant-asynchronous-linux-applications-4pl7" target="_blank" rel="noopener">
+            <span class="proj-name">Leveraging io_uring for Performant Asynchronous Linux Applications</span></a>
+        </li>
+        <li>
+          <a href="https://dev.to/sospeter/how-bittorrent-actually-works-h8a" target="_blank" rel="noopener">
+            <span class="proj-name">How BitTorrent Actually Works</span></a>
+        </li>
+        <li>
+          <a href="https://dev.to/sospeter/understanding-tcp-the-backbone-of-reliable-network-communication-5684" target="_blank" rel="noopener">
+            <span class="proj-name">Understanding TCP: The Backbone of Reliable Network Communication</span></a>
+        </li>
+        <li>
+          <a href="https://dev.to/sospeter/http-the-webs-protocol-1b69" target="_blank" rel="noopener">
+            <span class="proj-name">HTTP: The Web's Protocol</span></a>
+        </li>
+        <li>
+          <a href="https://dev.to/sospeter/utilizing-oceans-to-power-data-centers-4b18" target="_blank" rel="noopener">
+            <span class="proj-name">Utilizing Oceans to Power Data Centers</span></a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tab-panel" id="panel-competencies">
+      <ul>
+        <li class="comp-row">
+          <span class="comp-label">Languages</span>
+          <span class="comp-value">Go, Rust, TypeScript, Python</span>
+        </li>
+        <li class="comp-row">
+          <span class="comp-label">Frameworks</span>
+          <span class="comp-value">Express, Flask, React, Django</span>
+        </li>
+        <li class="comp-row">
+          <span class="comp-label">Systems &amp; APIs</span>
+          <span class="comp-value">REST, GraphQL, gRPC, decentralized systems</span>
+        </li>
+        <li class="comp-row">
+          <span class="comp-label">Cloud &amp; DevOps</span>
+          <span class="comp-value">Docker, CI/CD, Terraform, Linux</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tab-panel" id="panel-social">
+      <ul class="social">
+        <li><span>Resume</span> — <a href="https://github.com/sospeter-57/profile_sospeter/blob/master/Sospeter_Kinyanjui_cv.pdf" target="_blank" rel="noopener">Sospeter_Kinyanjui_cv.pdf</a></li>
+        <li><span>GitHub</span> — <a href="https://github.com/sospeter-57" target="_blank" rel="noopener">sospeter-57</a></li>
+        <li><span>LinkedIn</span> — <a href="https://www.linkedin.com/in/sospeter-kinyanjui-6a091b2a5/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BGfi6POdgSvCQq%2BH2BevMPw%3D%3D" target="_blank" rel="noopener">sospeter</a></li>
+        <li><span>Email</span> — <a href="mailto:sospeterkinyanjui57@gmail.com">sospeterkinyanjui57@gmail.com</a></li>
+      </ul>
+    </div>
   </section>
 
 </main>
-
-<script>
-  // Split the intro into words, each wrapped in a span with a staggered
-  // animation-delay so the reveal effect works purely off CSS keyframes.
-  const introText = "Hi, I'm Sospeter. I'm a backend systems engineer building services in Go and Rust, with infrastructure and CI/CD ownership, and project experience spanning a rental marketplace, a desktop 2FA tool, and a web forum backend. I'm based in Kisumu, Kenya, currently studying Software Engineering at Zone01 Kisumu.";
-  const el = document.getElementById('intro');
-  const words = introText.split(' ');
-  el.innerHTML = words.map((w, i) => `<span class="word" style="--i:${i}">${w}</span>`).join(' ');
-
-  // Sections pick up the cascade right after the intro finishes typing in,
-  // each one blurring/fading up in turn.
-  const introDuration = words.length * 28 + 500;
-  document.querySelectorAll('.reveal-section').forEach((sectionEl, i) => {
-    sectionEl.style.animationDelay = `${introDuration + i * 160}ms`;
-  });
-</script>
 
 </body>
 </html>
